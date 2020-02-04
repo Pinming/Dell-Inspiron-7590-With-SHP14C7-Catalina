@@ -9,9 +9,11 @@ Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 经尝试后发现，该屏幕在 `10.14.2` 版本下可以使用二进制破解 `AppleIntelCFLGraphicsFramebuffer.kext` 的方法规避这一 Panic 正常进入系统。具体参数已注入本 repo 的 `config.plist`。（具体注入内容见文末）
 
 关于 KextstoPatch 的参考文章：
-[Coffee Lake Intel UHD Graphics 630 on macOS Mojave: A compromise solution to the kernel panic due to division by zero in the framebuffer driver](https://www.firewolf.science/2018/10/coffee-lake-intel-uhd-graphics-630-on-macos-mojave-a-compromise-solution-to-the-kernel-panic-due-to-division-by-zero-in-the-framebuffer-driver)
-[[FIX] Coffee Lake Intel UHD Graphics 630 on macOS Mojave: Kernel panic due to divide-by-zero](https://www.tonymacx86.com/threads/fix-coffee-lake-intel-uhd-graphics-630-on-macos-mojave-kernel-panic-due-to-divide-by-zero.261687/)
-[10.14-10.14.5 macOS Mojave 各平台核显DVMT Framebuffer二进制补丁](http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1795107&highlight=macOS%2BMojave%2B10.14.1)
+《[Coffee Lake Intel UHD Graphics 630 on macOS Mojave: A compromise solution to the kernel panic due to division by zero in the framebuffer driver](https://www.firewolf.science/2018/10/coffee-lake-intel-uhd-graphics-630-on-macos-mojave-a-compromise-solution-to-the-kernel-panic-due-to-division-by-zero-in-the-framebuffer-driver)》      
+
+《[[FIX] Coffee Lake Intel UHD Graphics 630 on macOS Mojave: Kernel panic due to divide-by-zero](https://www.tonymacx86.com/threads/fix-coffee-lake-intel-uhd-graphics-630-on-macos-mojave-kernel-panic-due-to-divide-by-zero.261687/)》       
+
+《[10.14-10.14.5 macOS Mojave 各平台核显DVMT Framebuffer二进制补丁](http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1795107&highlight=macOS%2BMojave%2B10.14.1)》      
 
 关于其他硬件驱动的细节将在日后更新。
 
