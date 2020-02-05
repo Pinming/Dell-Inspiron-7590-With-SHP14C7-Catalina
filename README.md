@@ -25,8 +25,10 @@ Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 * 内置麦克风无法使用
 * F6 / F7 调节亮度尚不可用
 * 在 Windows 系统下热重启至 Mac 会导致声卡不能正常工作
-* HDMI 直连独立显卡，因此不能工作
+* HDMI 连接会导致 Kernel Panic
 * 直接启动 FaceTime 无法正常启用摄像头，需要先启动 PhotoBooth
+* 电池的容量 (Capacity) 识别错误，应为 97Wh，但实时电量显示基本准确
+
 
 # 硬件配置
 
@@ -37,13 +39,13 @@ Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 * RAM：16 GB * 2 = 32 GB RAM
 * Display：4K Sharp Display - Sharp SHP14C7
 * SSD：WD PC SN520 NVMe WDC 512GB SSD
-* Audio：Realtek ALC295（戴尔定制型号：ALC3254）（内置麦克风不能驱动）
+* Audio：Realtek ALC295（戴尔定制型号：ALC3254）（内置麦克风不能驱动）（Layout-ID = 77，选用 28 可能导致 kernel_task 占用过高而导致 CPU 高频不下）
 * 【计划 / 即将更换】_WLAN + Bluetooth：Broadcom DW1820A_
 
-## 未驱动
+## 已知不可驱动
 * Nvidia Geforce GTX 1650（无解）
 * Realtek Memory Card Reader（无解）
-* Intel Wireless-AC 9560（无解）
+* Intel Wireless-AC 9560（WiFi 无解 / 仅蓝牙可有限度使用）
 * Goodix fingerpint reader（无解）
 
 # 10.14.2 对应的 KextstoPatch 内容
