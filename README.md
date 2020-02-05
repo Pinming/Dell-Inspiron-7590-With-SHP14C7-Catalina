@@ -37,7 +37,7 @@ Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 * CPU：Intel Core i7-9750H
 * IGPU：Intel Graphics UHD 630
 * RAM：16 GB * 2 = 32 GB RAM
-* Display：4K Sharp Display - Sharp SHP14C7
+* Display：4K Sharp Display - Sharp SHP14C7（通过 `WhateverGreen` 配合 `SSDT-PNLF.aml` 以及 `KextstoPatch` 确保正确驱动及背光亮度）
 * SSD：WD PC SN520 NVMe WDC 512GB SSD
 * Audio：Realtek ALC295（戴尔定制型号：ALC3254）（内置麦克风不能驱动）（Layout-ID = 77，选用 28 可能导致 kernel_task 占用过高而导致 CPU 高频不下）
 * 【计划 / 即将更换】_WLAN + Bluetooth：Broadcom DW1820A_
