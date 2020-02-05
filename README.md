@@ -20,6 +20,14 @@ Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 先使用 `config-install.plist` （即仿冒 IGPU ID：0x12345678）安装系统并完成初始设置，然后在终端中重建 Kext 缓存：`sudo kextcache -i /`，然后重启。      
 之后再使用 `config.plist` 启动系统，如无意外应该可以正常驱动 UHD630 及本屏幕。
 
+# 目前存在的 Bug
+* 无线网卡 / 雷电接口尚未测试
+* 内置麦克风无法使用
+* F6 / F7 调节亮度尚不可用
+* 在 Windows 系统下热重启至 Mac 会导致声卡不能正常工作
+* HDMI 直连独立显卡，因此不能工作
+* 直接启动 FaceTime 无法正常启用摄像头，需要先启动 PhotoBooth
+
 # 硬件配置
 
 ## 已驱动 / 已知可驱动
@@ -29,36 +37,19 @@ Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 * RAM：16 GB * 2 = 32 GB RAM
 * Display：4K Sharp Display - Sharp SHP14C7
 * SSD：WD PC SN520 NVMe WDC 512GB SSD
-* Audio：Realtek ALC295（戴尔定制型号：ALC3254）
+* Audio：Realtek ALC295（戴尔定制型号：ALC3254）（内置麦克风不能驱动）
 * 【计划 / 即将更换】_WLAN + Bluetooth：Broadcom DW1820A_
 
 ## 未驱动
+* Nvidia Geforce GTX 1650（无解）
+* Realtek Memory Card Reader（无解）
 * Intel Wireless-AC 9560（无解）
 * Goodix fingerpint reader（无解）
-* Nvidia Geforce GTX 1650（无解）
 
 # 10.14.2 对应的 KextstoPatch 内容
 ```
 <key>KextsToPatch</key>
 <array>
-	<dict>
-		<key>Comment</key>
-		<string>To implement correct brightness levels, change F%uT%04x to F%uTxxxx in AppleBacklightInjector.kext (RehabMan)</string>
-		<key>Disabled</key>
-		<false/>
-		<key>Find</key>
-		<data>
-		RiV1VCUwNHgA
-		</data>
-		<key>InfoPlistPatch</key>
-		<false/>
-		<key>Name</key>
-		<string>com.apple.driver.AppleBacklight</string>
-		<key>Replace</key>
-		<data>
-		RiV1VHh4eHgA
-		</data>
-	</dict>
 	<dict>
 		<key>Comment</key>
 		<string>Disable MinStolenSize</string>
@@ -94,6 +85,6 @@ Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 		<data>
 		uAQAAACJhrwlAAAxwF3D
 		</data>
-		</dict>
+	</dict>
 </array>
 ```
