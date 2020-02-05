@@ -18,7 +18,7 @@ Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 
 # 在 10.14.2 下驱动 SHP14C7 的可行办法
 先使用 `config-install.plist` （即仿冒 IGPU ID：0x12345678）安装系统并完成初始设置，然后在终端中重建 Kext 缓存：`sudo kextcache -i /`，然后重启。      
-之后再使用 `config.plist` 启动系统，如无意外应该可以正常驱动 UHD630 及本屏幕。
+之后再使用 `config.plist` 启动系统，如无意外应该可以正常驱动 UHD630 及本屏幕。 
 
 # 目前存在的 Bug
 * 无线网卡 / 雷电接口尚未测试
