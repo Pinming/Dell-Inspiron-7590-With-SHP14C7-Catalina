@@ -35,7 +35,7 @@ Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 # 硬件配置
 
 ## 已驱动 / 已知可驱动
-* **Dell Inspiron 7590** with Sharp SHP14C7 4K Display
+**Dell Inspiron 7590** with Sharp SHP14C7 4K Display
 * CPU：Intel Core i7-9750H @ 2.60 Ghz (Boost to 4.50 Ghz)
 * IGPU：Intel Graphics UHD 630
 * RAM：Hynix DDR4 2666Mhz / 16 GB * 2 = 32 GB RAM
