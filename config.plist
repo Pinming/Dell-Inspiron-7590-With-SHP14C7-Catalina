@@ -4,20 +4,28 @@
 <dict>
 	<key>ACPI</key>
 	<dict>
-		<key>#Comment-SortedOrder</key>
-		<string>SortedOrder required if you have patched SSDTs in ACPI/patched</string>
+		<key>AutoMerge</key>
+		<true/>
 		<key>DSDT</key>
 		<dict>
 			<key>Fixes</key>
 			<dict>
 				<key>AddHDMI</key>
 				<false/>
-				<key>AddPNLF</key>
-				<true/>
+				<key>FixHDA</key>
+				<false/>
 				<key>FixHPET</key>
-				<true/>
+				<false/>
 				<key>FixIPIC</key>
+				<false/>
+				<key>FixMutex</key>
 				<true/>
+				<key>FixRTC</key>
+				<false/>
+				<key>FixRegions</key>
+				<false/>
+				<key>FixWAK</key>
+				<false/>
 			</dict>
 			<key>Patches</key>
 			<array>
@@ -51,7 +59,91 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change GFX0 to IGPU</string>
+					<string>change XHCI to XHC</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					WEhDSQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					WEhDXw==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Change OSID to XSID (to avoid match against _OSI XOSI patch)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					T1NJRA==
+					</data>
+					<key>Replace</key>
+					<data>
+					WFNJRA==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Change _OSI to XOSI, use wi SSDT th-XOSI.aml</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X09TSQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					WE9TSQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Change _DSM to XDSM (needed for _DSM injections, e.g. for HDEF, IGPU)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X0RTTQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					WERTTQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Change ECDV to EC (so Mac OS knows about the Embedded Controller)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					RUNEVg==
+					</data>
+					<key>Replace</key>
+					<data>
+					RUNfXw==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Change HECI to IMEI (so Mac OS can natively use the Management Engine)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					SEVDSQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					SU1FSQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Change GFX0 to IGPU (needed for graphics)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -65,20 +157,174 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change HDAS to HDEF</string>
+					<string>Rename BRT6 to BRTX, use with SSDT-BRT6.aml, SSDT-PNLF.aml, AppleBacklightInjector.kext, and VoodooPS2Controller.kext to fix brightness keys</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
 					<data>
-					SERBUw==
+					FCBCUlQ2Ag==
 					</data>
 					<key>Replace</key>
 					<data>
-					SERFRg==
+					FCBCUlRYAg==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change _STA to XSTA in Device GPI0</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1NUQQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					WFNUQQ==
+					</data>
+					<key>TgtBridge</key>
+					<data>
+					R1BJMA==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>rename HPET to XPET,  pair with SSDT-HPET.aml</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					SFBFVA==
+					</data>
+					<key>Replace</key>
+					<data>
+					WFBFVA==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>I2C1:_STA to XSTA ,pair with SSDT-I2C.aml</string>
+					<key>Disabled</key>
+					<true/>
+					<key>Find</key>
+					<data>
+					M19DUlMAoA6VT1NZUwvcB6RTQkZJoBKT
+					</data>
+					<key>Replace</key>
+					<data>
+					M1hDUlMAoA6VT1NZUwvcB6RTQkZJoBKT
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename method _PTS to ZPTS and use with SSDT-PTSWAK.aml to fix dGPU power sapping</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					FEkEX1BUUwE=
+					</data>
+					<key>Replace</key>
+					<data>
+					FEkEWlBUUwE=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename method _WAK to ZWAK and use with SSDT-PTSWAK.aml to fix dGPU power sapping</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					FDlfV0FLAQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					FDlaV0FLAQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename method GPRW to YPRW and use with SSDT-UPRW.aml to fix USB "instant wake" on sleep</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					FEAGR1BSVwI=
+					</data>
+					<key>Replace</key>
+					<data>
+					FEAGWVBSVwI=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename method UPRW to XPRW and use with SSDT-UPRW.aml to fix USB "instant wake" on sleep</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					FBJVUFJXAHA=
+					</data>
+					<key>Replace</key>
+					<data>
+					FBJYUFJXAHA=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Device AC rename to ADP1  pair with SSDT-ADP1 - credit syscl</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					QUNfXw==
+					</data>
+					<key>Replace</key>
+					<data>
+					QURQMQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename PNOT to XNOT</string>
+					<key>Disabled</key>
+					<true/>
+					<key>Find</key>
+					<data>
+					UE5PVA==
+					</data>
+					<key>Replace</key>
+					<data>
+					WE5PVA==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>I2C0:_STA to XSTA</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1NUQQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					WFNUQQ==
+					</data>
+					<key>TgtBridge</key>
+					<data>
+					STJDMA==
 					</data>
 				</dict>
 			</array>
 		</dict>
+		<key>DisabledAML</key>
+		<array>
+			<string>SSDT.aml</string>
+			<string>SSDT-XCPM.aml</string>
+			<string>SSDT-PluginType1.aml</string>
+		</array>
 		<key>DropTables</key>
 		<array>
 			<dict>
@@ -96,10 +342,6 @@
 		</array>
 		<key>FixHeaders</key>
 		<true/>
-		<key>ResetAddress</key>
-		<string>0x0CF9</string>
-		<key>ResetValue</key>
-		<string>0x06</string>
 		<key>SSDT</key>
 		<dict>
 			<key>DropOem</key>
@@ -113,8 +355,8 @@
 				<key>PluginType</key>
 				<true/>
 			</dict>
-			<key>UseSystemIO</key>
-			<false/>
+			<key>PluginType</key>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>Boot</key>
