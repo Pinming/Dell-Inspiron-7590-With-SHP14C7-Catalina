@@ -23,13 +23,12 @@ Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 之后再使用 `config.plist`（内置的 Platform ID：`0x3E9B0009`）启动系统，如无意外应该可以正常驱动 UHD630 及本屏幕。 
 
 # 目前存在的 Bug
-* macOS 版本**不能升级**（本 repo 中的二进制破解仅适用于 `10.14.2` && `10.14.3` ！各版本对应的 `KextstoPatch` 并不相同
-* 无线网卡尚未测试
-* 雷电接口无法识别，预计无法实现雷电功能；只可作为普通 USB-C 接口使用
-* 内置麦克风无法使用【无解】
-* `F6` && `F7` 调节亮度映射错误，对应的按键是 `Fn + S` && `Fn + B`（你怎么骂人呢！）【近期会对键盘映射做修复】
 * ~~在 Windows 系统下热重启至 Mac 会导致声卡不能正常工作~~ 通过强制加载 `AppleHDA` 及使用 `SSDT-ALC295.aml` 基本可以解决该问题，当前测试下还未发现失效情况
-* ~~HDMI 连接会导致 Kernel Panic~~ 通过在 `Devices` -> `Properties` 中注入接口数据使得 HDMI 连接时不崩溃，但似乎仍不输出画面【还需要进行测试及改进】
+* ~~HDMI 连接会导致 Kernel Panic~~ 通过在 `Devices` -> `Properties` 中注入接口数据使得 HDMI 连接时不崩溃，可以正常输出画面，但不能输出声音
+* macOS 版本**不能升级**（本 repo 中的二进制破解仅适用于 `10.14.2` && `10.14.3` ！各版本对应的 `KextstoPatch` 并不相同)
+* 无线网卡 / 雷电接口尚未测试，不确定功能可用性
+* `F6` && `F7` 调节亮度映射错误，对应的按键是 `Fn + S` && `Fn + B`（你怎么骂人呢！）【近期会对键盘映射做修复】
+* 内置麦克风无法使用【无解】
 * 直接启动 FaceTime 无法正常启用摄像头，需要先启动 PhotoBooth
 * 电池的容量 (Capacity) 识别错误，应为 97Wh，但实时电量显示基本准确
 
@@ -40,7 +39,7 @@ Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 * CPU：Intel Core i7-9750H @ 2.60 Ghz (Boost to 4.50 Ghz)
 * IGPU：Intel Graphics UHD 630
 * RAM：Hynix DDR4 2666Mhz / 16 GB * 2 = 32 GB RAM
-* Display：Sharp SHP14C7 @ 15.5' / 4K（通过 `WhateverGreen` 配合 `SSDT-PNLF.aml` 以及 `KextstoPatch` 确保正确驱动及正确且可调的背光亮度）
+* Display：Sharp SHP14C7 @ 15.6' / 4K（通过 `WhateverGreen` 配合 `SSDT-PNLF.aml` 以及 `KextstoPatch` 确保正确驱动及正确且可调的背光亮度）
 * SSD：WD PC SN520 NVMe WDC 512GB SSD
 * Audio：Realtek ALC295（戴尔定制型号：ALC3254）（内置麦克风不能驱动）（Layout-ID = 77，选用 28 可能导致 kernel_task 占用过高而导致 CPU 高频不下）
 * 【计划 / 即将更换】_WLAN + Bluetooth：Broadcom DW1820A_
