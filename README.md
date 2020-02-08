@@ -55,8 +55,8 @@ Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 ![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbpao507m0j312s0puk4h.jpg)
 
 日常娱乐。
+![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbpao7m8fsj31hc0u0b29.jpg)
 ![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbpatxnk21j31hc0u0ax6.jpg)
-![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbpaoaka55j31hc0u0b29.jpg)
 
 BMD RAW 解码速度测试。
 ![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbpaoe2vsbj31hc0u0npd.jpg)
