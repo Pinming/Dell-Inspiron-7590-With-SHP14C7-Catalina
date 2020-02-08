@@ -16,7 +16,7 @@ Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 # 关于二进制破解 Kext 的参考文章
 《[Coffee Lake Intel UHD Graphics 630 on macOS Mojave: A compromise solution to the kernel panic due to division by zero in the framebuffer driver](https://www.firewolf.science/2018/10/coffee-lake-intel-uhd-graphics-630-on-macos-mojave-a-compromise-solution-to-the-kernel-panic-due-to-division-by-zero-in-the-framebuffer-driver)》      
 《[[FIX] Coffee Lake Intel UHD Graphics 630 on macOS Mojave: Kernel panic due to divide-by-zero](https://www.tonymacx86.com/threads/fix-coffee-lake-intel-uhd-graphics-630-on-macos-mojave-kernel-panic-due-to-divide-by-zero.261687/)》       
-《[10.14-10.14.5 macOS Mojave 各平台核显DVMT Framebuffer二进制补丁](http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1795107&highlight=macOS%2BMojave%2B10.14.1)》
+《[10.14-10.14.5 macOS Mojave 各平台核显 DVMT Framebuffer 二进制补丁](http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1795107&highlight=macOS%2BMojave%2B10.14.1)》
 
 # 使用本 EFI 在 10.14.3 下驱动 SHP14C7 的可行办法
 先使用 `config.plist` 并修改启动用的集显 Platform-ID：`0x12345678`，然后安装系统并完成初始设置，首次进入系统后，在 Terminal 中重建 Kext 缓存：`sudo kextcache -i /`，然后重启。      
@@ -49,6 +49,28 @@ Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 * Realtek Memory Card Reader（无解）
 * Intel Wireless-AC 9560（WiFi 无解 / 仅蓝牙可有限度使用）
 * Goodix fingerpint reader（无解）
+
+# 系统运行图赏
+目前系统的主要硬件均可正常工作，CPU、IGPU 实现了（原生）变频。
+![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbpao507m0j312s0puk4h.jpg)
+
+日常娱乐。
+![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbpatxnk21j31hc0u0ax6.jpg)
+![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbpaoaka55j31hc0u0b29.jpg)
+
+BMD RAW 解码速度测试。
+![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbpaoe2vsbj31hc0u0npd.jpg)
+
+Davinci Resolve、Premiere、XCode。
+![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbpaofkq7tj31hc0u0awc.jpg)
+![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbpaohyeeqj31hc0u01kx.jpg)
+![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbpaokd3vvj31hc0u01kx.jpg)
+
+4K 60fps HDR 视频硬解，没有明显掉帧。若是在 Win10 下即使用 1650 带这样的视频也会非常费劲，掉帧是常事。苹果的优化功力不得不服！再也不黑了！nb！
+![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbpaoo5gbaj31hc0u0kjl.jpg)
+
+最后当然是挂老婆！　　# 画面灰暗是截图采集的问题，原片 (Cinema 4K 24 / HDR) 上色及肉眼所见正常
+![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbpaopp0igj31hc0u0aw8.jpg)
 
 # 10.14.2 && 10.14.3 对应的 KextstoPatch 内容
 ```
@@ -92,3 +114,6 @@ Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 	</dict>
 </array>
 ```
+
+
+
