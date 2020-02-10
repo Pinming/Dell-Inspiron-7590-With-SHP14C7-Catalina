@@ -2,7 +2,7 @@
 Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.      
 **注意 | 本 EFI 仅供参考，系统目前已经可以满足日常使用的需要，但无线网卡尚未测试！相关的完善将在近期进行。**
 
-**【夏普屏驱动问题将在下一版本的 `WhateverGreen` 中被解决，感谢 @0xFirewolf！具体解决思路详见：https://github.com/acidanthera/WhateverGreen/pull/41】**
+**【夏普屏驱动问题将在下一版本的 `WhateverGreen` 中被解决，感谢 @0xFirewolf！具体解决思路详见：https://github.com/acidanthera/WhateverGreen/pull/41 】**
 
 **【本 EFI 可以引导 macOS 10.15.3】**
 
