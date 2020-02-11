@@ -17,9 +17,9 @@ Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 
 # 目前存在的 Bug
 * 无线网卡 / 雷电接口尚未测试，不确定功能可用性
-* `F6` && `F7` 调节亮度映射错误，对应的按键是 `Fn + S` && `Fn + B`（你怎么骂人呢！）【近期会对键盘映射做修复】
 * 内置麦克风无法使用【无解】
 * 电池的容量 (Capacity) 识别错误，应为 97Wh，但实时电量显示基本准确
+* ~~`F6` && `F7` 调节亮度映射错误，对应的按键是 `Fn + S` && `Fn + B`（你怎么骂人呢！）~~【已修复：`SSDT-BRT6.aml`】
 * ~~在 Windows 系统下热重启至 Mac 会导致声卡不能正常工作~~ 通过强制加载 `AppleHDA` 及使用 `SSDT-ALC295.aml`一定程度上能够解决，但仍存在一定概率偶发
 * ~~HDMI 连接会导致 Kernel Panic~~ 通过在 `Devices` -> `Properties` 中注入接口数据使得 HDMI 连接时不崩溃，可以正常输出画面，但不能输出声音
 * ~~macOS 版本**不能升级**~~（~~本 repo 中的二进制破解仅适用于 `10.14.2` && `10.14.3` ！各版本对应的 `KextstoPatch` 并不相同~~ 待 `WhateverGreen` 下一版本更新则可以长期支持 macOS 更新)
