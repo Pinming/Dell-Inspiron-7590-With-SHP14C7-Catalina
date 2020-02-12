@@ -1,21 +1,14 @@
 # Dell-Inspiron-7590-With-SHP14C7-Catalina
 Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.      
-**注意 | 本 EFI 仅供参考，系统目前已经可以满足日常使用的需要，但无线网卡尚未测试！相关的完善将在近期进行。**
+**注意 | 本 EFI 仅供参考，系统目前各个可以驱动的主要硬件运行基本正常，但无线网卡尚未测试！相关的完善将在近期进行。如要作为日常使用请慎重考虑！**
 
-**【夏普屏驱动问题将在下一版本的 `WhateverGreen` 中被解决，感谢 @0xFirewolf！具体解决思路详见：https://github.com/acidanthera/WhateverGreen/pull/41 】**
-
-**【本 EFI 可以引导 macOS 10.15.3】**
-
+**【本 EFI 已集成 `WhateverGreen` 最新源码（`1.3.7`），夏普屏驱动问题已解决，理论上可以不使用二进制破解引导 10.15 各版本。感谢 @0xFirewolf！具体解决思路详见：https://github.com/acidanthera/WhateverGreen/pull/41 】**
 ![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbstoz9de8j312s0pun9r.jpg)
 
 # 使用本 EFI 驱动 SHP14C7 的可行办法
-## 对于 10.15.3
 先使用 `config.plist` 并修改启动用的集显 Platform-ID：`0x12345678`，然后安装系统并完成初始设置，首次进入系统后，在 Terminal 中重建 Kext 缓存：`sudo kextcache -i /`，然后重启。  
 之后再使用 `config.plist`（内置的 Platform ID：`0x3E9B0009`）启动系统，如无意外应该可以正常驱动 UHD630 及本屏幕。 
-
-## 对于 10.14.3
-过程同上，将 `config.plist` 更换为 `config-10143.plist` 即可。
-
+【`config.plist` 已进行通用化处理，不再区分 `10.14` & `10.15`，非夏普屏理论上也通用。】
 
 # 目前存在的 Bug
 * 无线网卡 / 雷电接口尚未测试，不确定功能可用性
@@ -46,7 +39,7 @@ Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 * Goodix fingerpint reader（无解）
 
 
-【以下内容不再有效，仅供参考！】
+**【以下内容不再有效，仅供参考！】**
 
 # 先行说明：建立本 Repo 的原因
 
