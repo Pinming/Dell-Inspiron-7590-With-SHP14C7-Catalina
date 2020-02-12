@@ -819,7 +819,7 @@
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C02W8DZ6KGYGP4FFB</string>
+		<string>C02XJ5ZZKGYGP4FJC</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -849,9 +849,9 @@
 		<key>ProductName</key>
 		<string>MacBookPro15,1</string>
 		<key>SerialNumber</key>
-		<string>C02W8DZ6KGYG</string>
+		<string>C02XJ5ZZKGYG</string>
 		<key>SmUUID</key>
-		<string>061366DA-00DB-48F1-9FED-EE343CF1C780</string>
+		<string>BBAE2308-EC03-433A-BC16-796BD38C4E7D</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
@@ -860,7 +860,7 @@
 		<key>BacklightLevel</key>
 		<string>0</string>
 		<key>CustomUUID</key>
-		<string>3F8CC876-D462-43F6-813F-ED5D2F7CBA91</string>
+		<string>495FEF09-EE32-4C19-81DC-BF6BF6F41C41</string>
 		<key>InjectKexts</key>
 		<string>Detect</string>
 		<key>InjectSystemID</key>
