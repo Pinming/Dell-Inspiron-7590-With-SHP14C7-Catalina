@@ -16,7 +16,7 @@ Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 * 电池的容量 (Capacity) 识别错误，应为 97Wh，但实时电量显示基本准确
 * ~~`F6` && `F7` 调节亮度映射错误，对应的按键是 `Fn + S` && `Fn + B`（你怎么骂人呢！）~~【已修复：`SSDT-BRT6.aml`】
 * ~~在 Windows 系统下热重启至 Mac 会导致声卡不能正常工作~~ 【通过强制加载 `AppleHDA` 及使用 `SSDT-ALC295.aml`一定程度上能够解决，但仍存在一定概率偶发】
-* ~~HDMI 连接会导致 Kernel Panic 【通过在 `Devices` -> `Properties` 中注入接口数据使得 HDMI 连接时不崩溃，可以正常输出画面，但不能输出声音】~~【该 Bug 在更换新的 SSDT 后复发，正在排查】
+* ~~HDMI 连接会导致 Kernel Panic 【通过在 `Devices` -> `Properties` 中注入接口数据使得 HDMI 连接时不崩溃，可以正常输出画面，但不能输出声音】~~【该 Bug 在更换新的 SSDT 后复发，虽不崩溃但无法输出。正在寻求解决办法。】
 * ~~macOS 版本**不能升级**~~（~~本 repo 中的二进制破解仅适用于 `10.14.2` && `10.14.3` ！各版本对应的 `KextstoPatch` 并不相同~~）【 理论上目前可以长期支持 macOS 更新】
 * ~~直接启动 FaceTime 无法正常启用摄像头，需要先启动 PhotoBooth~~ 【10.15.3 中不再出现该问题】
 
