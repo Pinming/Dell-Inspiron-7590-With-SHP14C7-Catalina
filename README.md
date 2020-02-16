@@ -1,5 +1,7 @@
 # Dell-Inspiron-7590-With-SHP14C7-Catalina
 Clover EFI for Dell Inspiron 7590 with Sharp SHP14C7.      
+**【本机的引导方案已转换至 `OpenCore` 解决了更多 Bug，且体验更佳。故本 repo _不再更新_！请移步至 [OC 引导的 repo](https://github.com/Pinming/Dell-Inspiron-7590-Hackintosh-Opencore)。】**
+
 **注意 | 本 EFI 仅供参考，系统目前各个可以驱动的主要硬件运行基本正常，但无线网卡尚未测试！相关的完善将在近期进行。如要作为日常使用请慎重考虑！**
 
 **【本 EFI 已集成 `WhateverGreen` 最新源码（`1.3.7`），夏普屏驱动问题已解决，理论上可以不使用二进制破解引导 10.15 各版本。感谢 @0xFirewolf！具体解决思路详见：https://github.com/acidanthera/WhateverGreen/pull/41 】**
